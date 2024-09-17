@@ -1,7 +1,13 @@
+using Busero.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<BusDbContext>(configure =>
+configure.UseSqlServer("Server = JMERCALLY\\MSSQLSERVER01; Initial Catalog = Bus; Integrated Security = True; TrustServerCertificate = True;"));
 
 var app = builder.Build();
 
