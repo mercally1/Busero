@@ -29,7 +29,7 @@ public class Bus
 
     [Required]
     [Display (Name = "Conductor")]
-    public int? DriverId { get; set; }
+    public string? DriverId { get; set; }
 
     [ForeignKey("DriverId")]
     public virtual Driver? Driver { get; set; }
